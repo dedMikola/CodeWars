@@ -26,3 +26,9 @@ let uniqueInOrder = function (iterable) {
     }
     return newArr
 }
+
+
+// Best practices:
+var uniqueInOrder=function(iterable){
+    return [...iterable].filter((a, i) => a !== iterable[i-1])
+}
