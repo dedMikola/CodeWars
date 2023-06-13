@@ -1,0 +1,30 @@
+// The main idea is to count all the occurring characters in a string. 
+// If you have a string like aba, then the result should be {'a': 2, 'b': 1}.
+
+// What if the string is empty? Then the result should be empty object literal, {}.
+
+
+let count = function (string) {
+    console.log(string)
+    let count = 0;
+    let finalArr = {};
+    for (const stringElement of string) {
+        for (const element of string) {
+            if(stringElement === element){
+                count++
+            }
+        }
+        finalArr[stringElement] = count;
+        count = 0;
+    }
+    return finalArr
+}
+
+//Best practices:
+function count (string) {  
+  var count = {};
+  string.split('').forEach(function(s) {
+     count[s] ? count[s]++ : count[s] = 1;
+  });
+  return count;
+}
